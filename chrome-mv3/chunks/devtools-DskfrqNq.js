@@ -1,0 +1,1 @@
+import{b as r}from"./browser-BnURzfs5.js";const e=r?.devtools??globalThis.chrome?.devtools;if(!e?.panels?.create)console.warn("DevTools panels API unavailable; minirep panel not registered.");else try{e.panels.create("minirep","icon/16.png","panel.html")}catch(o){console.error("Failed to create minirep DevTools panel:",o)}
