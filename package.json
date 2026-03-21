@@ -1,6 +1,6 @@
 {
   "name": "minirep",
-  "description": "manifest.json description",
+  "description": "Chrome DevTools extension for AI-assisted API testing, request replay, extractor-based recon, and web security analysis.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
