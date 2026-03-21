@@ -20,6 +20,8 @@
 - AI MiniReper assistant for explaining traffic, generating follow-up ideas, and working from captured extractor context
 - Saved panel layout and saved AI settings in local extension storage
 
+<img width="1306" height="736" alt="image" src="https://github.com/user-attachments/assets/2cb69d4e-8638-4510-92d5-c06eed8e1a9b" />
+
 ## Install In Chrome
 
 This project is currently installed from source as an unpacked Chrome extension.
