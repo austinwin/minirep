@@ -1,0 +1,39 @@
+{
+  "name": "minirep",
+  "description": "manifest.json description",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.12",
+    "@ai-sdk/google": "^3.0.7",
+    "@ai-sdk/openai": "^3.0.9",
+    "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
+    "acorn": "^8.15.0",
+    "ai": "^6.0.31",
+    "highlight.js": "^11.11.1",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "secretlint": "^11.2.5"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@wxt-dev/module-react": "^1.1.5",
+    "js-yaml": "^4.1.1",
+    "typescript": "^5.9.3",
+    "wxt": "^0.20.6"
+  }
+}

@@ -1,0 +1,72 @@
+:root {
+  font-family: "Space Grotesk", "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--bg-0);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --bg-0: #0f1216;
+  --bg-1: #151a20;
+  --bg-2: #1c232b;
+  --panel-border: #2b323c;
+  --text: #e8edf3;
+  --muted: #98a3b3;
+  --accent: #6fc6ff;
+  --accent-2: #7ce7b5;
+  --accent-3: #f0b36d;
+  --danger: #ff8a8a;
+  --shadow: 0 20px 50px rgba(3, 6, 10, 0.55);
+  --mono: "JetBrains Mono", "Fira Code", "Menlo", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-0);
+  background-image: radial-gradient(
+      circle at 20% 0%,
+      rgba(111, 198, 255, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(240, 179, 109, 0.12),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(124, 231, 181, 0.1),
+      transparent 40%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 60%);
+  color: var(--text);
+}
+
+#root {
+  height: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+}
