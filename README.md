@@ -1,3 +1,5 @@
+> For authorized security research, defensive testing, and educational use only. Do not use `minirep` against systems, networks, or applications without explicit permission. You are responsible for complying with all applicable laws and policies. Use at your own risk.
+
 # minirep
 
 [![GitHub stars](https://img.shields.io/github/stars/austinwin/minirep?style=social)](https://github.com/austinwin/minirep/stargazers)
@@ -427,3 +429,7 @@ If `minirep` helps your workflow:
 - Open issues and feature requests with real workflows you want supported
 
 More visibility means more feedback, better extractor coverage, better AI workflows, and a stronger open-source DevTools extension for API security testing and browser-based application analysis.
+
+## License
+
+This project is released under the MIT License. See [LICENSE](./LICENSE).
