@@ -320,41 +320,67 @@ These are the kinds of workflows `minirep` is designed for:
 
 ## Install In Chrome
 
-This project is installed from source as an unpacked Chrome extension.
+You can install `minirep` in Chrome in two ways.
 
-### 1. Install dependencies
+### Option A: Install from the pre-built GitHub Release zip
 
-Run these commands from the extension folder, the one that contains `package.json`.
+This is the easiest path for end users because it does not require Node.js or a local build.
+
+1. Open the GitHub Releases page for `minirep`
+2. Download the latest pre-built zip asset
+3. Unzip the file on your machine
+4. Open the extracted folder and locate the folder that contains `manifest.json`
+5. Open `chrome://extensions`
+6. Turn on `Developer mode`
+7. Click `Load unpacked`
+8. Select the extracted folder that contains `manifest.json`
+
+Important notes:
+
+- Chrome cannot install the zip directly through `Load unpacked`; you must unzip it first
+- If the release extracts into a folder such as `output_built/` or `chrome-mv3/`, choose that folder if it contains `manifest.json`
+- The correct folder is always the one that directly contains files like `manifest.json`, `panel.html`, `devtools.html`, `chunks/`, and `icon/`
+
+### Option B: Build from source
+
+Use this path if you want to develop, modify, or locally rebuild the extension.
+
+1. Install dependencies from the extension folder:
 
 ```bash
 npm install
 ```
 
-### 2. Build the extension
+2. Build the extension:
 
 ```bash
 npm run build
 ```
 
-The Chrome extension build output will be created in:
+3. The unpacked Chrome extension will be created in:
 
 ```text
 .output/chrome-mv3
 ```
 
-### 3. Load it in Chrome
+4. Open `chrome://extensions`
+5. Turn on `Developer mode`
+6. Click `Load unpacked`
+7. Select the `.output/chrome-mv3` folder
 
-1. Open `chrome://extensions`
-2. Turn on `Developer mode`
-3. Click `Load unpacked`
-4. Select the `.output/chrome-mv3` folder
-
-### 4. Open the panel
+### First run after install
 
 1. Open any target web app in Chrome
 2. Open DevTools
 3. Click the `minirep` tab
 4. Reload the page or interact with it to start populating traffic
+
+### Updating to a newer release build
+
+1. Download the newer pre-built release zip
+2. Unzip it to a new or replacement folder
+3. Open `chrome://extensions`
+4. Click `Reload` on the existing `minirep` extension, or use `Load unpacked` again and select the newer extracted folder
 
 ## Suggested Workflow
 
