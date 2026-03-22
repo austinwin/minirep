@@ -1,0 +1,9 @@
+title: minirep
+description: Chrome DevTools extension for AI-assisted API testing, request replay, extractor-based recon, and web security analysis.
+url: https://austinwin.github.io
+baseurl: /minirep
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+markdown: kramdown

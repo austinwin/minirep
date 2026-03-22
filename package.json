@@ -4,6 +4,32 @@
   "license": "MIT",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://github.com/austinwin/minirep",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austinwin/minirep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/austinwin/minirep/issues"
+  },
+  "keywords": [
+    "chrome-extension",
+    "chrome-devtools",
+    "devtools-extension",
+    "api-testing",
+    "api-security",
+    "request-replay",
+    "request-repeater",
+    "request-response-analysis",
+    "web-security",
+    "security-research",
+    "bug-bounty",
+    "pentesting",
+    "endpoint-discovery",
+    "supabase-security",
+    "ai-security",
+    "appsec"
+  ],
   "type": "module",
   "scripts": {
     "dev": "wxt",

@@ -2,12 +2,27 @@
 
 # minirep
 
+[![Latest Release](https://img.shields.io/github/v/release/austinwin/minirep)](https://github.com/austinwin/minirep/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/austinwin/minirep?style=social)](https://github.com/austinwin/minirep/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/austinwin/minirep?style=social)](https://github.com/austinwin/minirep/network/members)
 
 `minirep` is a Chrome DevTools extension for live request capture, API replay, response inspection, extractor-based recon, and AI-assisted security testing. It combines a DevTools request mirror, a lightweight repeater/runner, a finding extractor, and an AI agent that can work from captured traffic and selected findings.
 
 If you are looking for a Chrome DevTools extension for API testing, request replay, bug bounty recon, web application security review, AI pentesting workflows, endpoint discovery, header auditing, Supabase exposure checks, or request/response analysis, `minirep` is built for that workflow.
+
+## Contents
+
+- [Why Minirep](#why-minirep)
+- [Core Capabilities](#core-capabilities)
+- [Install In Chrome](#install-in-chrome)
+- [Suggested Workflow](#suggested-workflow)
+- [Permissions and Privacy](#permissions-and-privacy)
+- [Current Limitations](#current-limitations)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Security](#security)
+- [License](#license)
 
 ## Why Minirep
 
@@ -424,6 +439,14 @@ npm run build
 - If extractor findings are empty, capture more traffic and run the scan again
 - If the AI panel cannot respond, verify provider, model, API key, and optional base URL
 - If you change source files, rebuild with `npm run build` and reload the unpacked extension
+
+## Contributing
+
+Contributions are welcome. If you want to improve extractors, add scanner rules, refine the AI workflow, improve the DevTools UX, or expand provider support, start with [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## Security
+
+If you believe you found a vulnerability in `minirep` itself, see [SECURITY.md](./SECURITY.md) before opening a public issue.
 
 ## Help This Project Grow
 

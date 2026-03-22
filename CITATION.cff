@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+title: minirep
+message: "If you use minirep in research, publications, or demos, please cite this repository."
+type: software
+license: MIT
+repository-code: "https://github.com/austinwin/minirep"
+url: "https://github.com/austinwin/minirep"
+authors:
+  - family-names: Austinwin
+preferred-citation:
+  type: software
+  title: minirep
+  repository-code: "https://github.com/austinwin/minirep"
+  url: "https://github.com/austinwin/minirep"
+  license: MIT
