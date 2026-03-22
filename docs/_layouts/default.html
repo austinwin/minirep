@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="icon" type="image/png" href="{{ '/assets/favicon-96.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+    {% seo %}
+  </head>
+  <body>
+    <div class="site-bg"></div>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand__mark">MINIREP</span>
+          <span class="brand__docs">DOCS</span>
+        </a>
+        <div class="site-header__links">
+          <a href="{{ site.releases_url }}">Releases</a>
+          <a href="{{ site.github_repo }}">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="site-shell">
+      <aside class="site-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-eyebrow">Documentation</div>
+          <div class="sidebar-title">{{ site.title }}</div>
+          <p class="sidebar-copy">{{ site.tagline }}</p>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Primary">
+          {% for item in site.nav %}
+            {% assign current_url = page.url | replace: 'index.html', '' %}
+            {% assign item_url = item.url | relative_url %}
+            {% assign normalized_item_url = item.url %}
+            <a class="sidebar-nav__link{% if current_url == normalized_item_url %} is-active{% endif %}" href="{{ item_url }}">
+              {{ item.title }}
+            </a>
+          {% endfor %}
+        </nav>
+
+        <div class="sidebar-card sidebar-card--muted">
+          <div class="sidebar-card__title">Positioning</div>
+          <p>`minirep` is a browser-native companion to Burp Suite and other security tooling. It stays close to real traffic, frontend context, and DevTools workflows.</p>
+        </div>
+      </aside>
+
+      <main class="site-main">
+        <div class="page-frame">
+          <div class="page-hero">
+            {% if page.eyebrow %}
+              <div class="page-eyebrow">{{ page.eyebrow }}</div>
+            {% endif %}
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}
+              <p class="page-description">{{ page.description }}</p>
+            {% endif %}
+            <div class="page-actions">
+              <a class="button button--primary" href="{{ site.releases_url }}">Download Release</a>
+              <a class="button button--ghost" href="{{ site.github_repo }}">View Repository</a>
+            </div>
+          </div>
+
+          <article class="page-content">
+            {{ content }}
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span>{{ site.title }}: Chrome DevTools extension for AI-assisted API testing and security analysis.</span>
+        <span><a href="{{ site.github_repo }}">GitHub</a> · <a href="{{ '/security/' | relative_url }}">Security</a> · <a href="{{ '/installation/' | relative_url }}">Install</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

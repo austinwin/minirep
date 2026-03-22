@@ -3,7 +3,35 @@ description: Chrome DevTools extension for AI-assisted API testing, request repl
 url: https://austinwin.github.io
 baseurl: /minirep
 theme: minima
+tagline: DevTools-native AI-assisted API testing and security analysis
+github_repo: https://github.com/austinwin/minirep
+releases_url: https://github.com/austinwin/minirep/releases
+nav:
+  - title: Overview
+    url: /
+  - title: Installation
+    url: /installation/
+  - title: Workspace
+    url: /workspace/
+  - title: AI MiniReper
+    url: /ai-minireper/
+  - title: Extractor
+    url: /extractor/
+  - title: Runner
+    url: /runner/
+  - title: Security
+    url: /security/
+  - title: Burp Companion
+    url: /burp-companion/
+  - title: FAQ
+    url: /faq/
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-sitemap
 markdown: kramdown
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
