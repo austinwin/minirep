@@ -318,7 +318,13 @@ These are the kinds of workflows `minirep` is designed for:
 - Supabase key, table, and exposure checker from frontend traffic
 - API replay, request runner, and response diff tool in the browser
 
-<img width="1306" height="736" alt="image" src="https://github.com/user-attachments/assets/2cb69d4e-8638-4510-92d5-c06eed8e1a9b" />
+<img width="1306" height="736" alt="image" src="https://github.com/user-attachments/assets/2cb69d4e-8638-4510-92d5-c06eed8e1a9b" />  
+<img width="812" height="636" alt="image" src="https://github.com/user-attachments/assets/5312a898-b820-452a-9968-eae245d07227" />  
+<img width="1042" height="550" alt="image" src="https://github.com/user-attachments/assets/d0886e48-40e8-4c5f-8510-781c542c8df3" />  
+<img width="1314" height="618" alt="image" src="https://github.com/user-attachments/assets/cc988805-0159-4c05-878a-f85e72775214" />  
+
+
+
 
 ## Install In Chrome
 
