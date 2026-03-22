@@ -1,6 +1,6 @@
 ---
 title: minirep Documentation
-description: Enterprise-style product documentation for minirep, the Chrome DevTools companion for request replay, extractor-driven recon, AI-assisted analysis, and security testing workflows.
+description: Documentation for minirep, the Chrome DevTools companion for request replay, extractor-driven recon, AI-assisted analysis, and security testing workflows.
 permalink: /
 eyebrow: Official Product Docs
 ---
