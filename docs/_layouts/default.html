@@ -11,7 +11,7 @@
     
     <style>
       :root {
-        /* Default Dark Theme */
+        /* DARK THEME (The Matrix) */
         --term-bg: #050505;
         --term-fg: #00ff00;
         --term-dim: #008800;
@@ -21,162 +21,112 @@
       }
 
       [data-theme="light"] {
-        /* Light Theme (Retro Paper / Pale Phosphor) */
-        --term-bg: #e8f0e8;
-        --term-fg: #003300;
-        --term-dim: #007700;
-        --term-accent: #0000dd;
-        --term-scanline: rgba(0, 0, 0, 0.08);
+        /* LIGHT THEME (The Architect / Lab) */
+        --term-bg: #f5f5f5;      /* Clean off-white */
+        --term-fg: #1a1a1a;      /* Deep charcoal */
+        --term-dim: #999999;     /* Grayed out text */
+        --term-accent: #0055ff;  /* Sharp blue for links */
+        --term-scanline: rgba(0, 0, 0, 0.03); /* Faint scanlines */
       }
       
       body, html {
         background-color: var(--term-bg) !important;
         color: var(--term-fg) !important;
         font-family: var(--term-font) !important;
-        transition: background-color 0.3s, color 0.3s;
+        transition: background-color 0.2s, color 0.2s;
+        margin: 0;
       }
       
-      /* Global Typography & CRT Glow */
-      h1, h2, h3, h4, h5, h6, .sidebar-eyebrow, .sidebar-title {
+      h1, h2, h3, .sidebar-eyebrow, .sidebar-title {
         color: var(--term-fg) !important;
-        text-shadow: 0 0 4px var(--term-fg);
         text-transform: uppercase;
-        font-weight: bold;
+        letter-spacing: 1px;
       }
 
       a {
         color: var(--term-accent) !important;
-        text-decoration: none;
+        text-decoration: underline;
+        text-underline-offset: 3px;
       }
       
       a:hover {
+        background-color: var(--term-fg);
         color: var(--term-bg) !important;
-        background-color: var(--term-accent);
+        text-decoration: none;
       }
 
-      /* Layout Borders */
+      /* Borders & Structure */
       .site-header {
-        border-bottom: 1px dashed var(--term-fg) !important;
+        border-bottom: 2px solid var(--term-fg) !important;
         background: transparent !important;
       }
       
       .site-sidebar {
-        border-right: 1px dashed var(--term-dim) !important;
-        background: transparent !important;
+        border-right: 1px solid var(--term-dim) !important;
       }
       
-      .brand {
-        color: var(--term-fg) !important;
-        text-shadow: 0 0 5px var(--term-fg);
-      }
-
-      /* Sidebar Elements */
       .sidebar-card {
-        border: 1px solid var(--term-dim);
-        background: rgba(0, 255, 0, 0.03) !important;
+        border: 1px solid var(--term-fg);
         padding: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
-      .sidebar-card--muted {
-        border-color: var(--term-dim);
-        color: var(--term-dim) !important;
-      }
-
-      /* Navigation */
-      .sidebar-nav {
-        margin-bottom: 2rem;
-      }
-      
+      /* Navigation Styles */
       .sidebar-nav__link {
         display: block;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid var(--term-dim);
+        padding: 0.4rem 0;
+        border-bottom: 1px dotted var(--term-dim);
       }
       
-      .sidebar-nav__link::before {
-        content: "[ ] ";
-        color: var(--term-dim);
-      }
+      .sidebar-nav__link::before { content: "> "; }
       
-      .sidebar-nav__link:hover::before,
-      .sidebar-nav__link.is-active::before {
-        content: "[*] ";
-        color: var(--term-fg);
-        text-shadow: 0 0 5px var(--term-fg);
-      }
-
       .sidebar-nav__link.is-active {
-        color: var(--term-fg) !important;
+        font-weight: bold;
+        background: var(--term-fg);
+        color: var(--term-bg) !important;
       }
 
       /* Buttons */
       .button {
         display: inline-block;
-        padding: 0.5rem 1rem;
-        margin-right: 1rem;
-        border: 1px solid var(--term-fg) !important;
+        padding: 0.6rem 1.2rem;
+        border: 2px solid var(--term-fg) !important;
         background: var(--term-bg) !important;
         color: var(--term-fg) !important;
         text-transform: uppercase;
-        font-weight: bold;
-        transition: all 0.2s;
+        font-weight: 900;
         cursor: pointer;
+        text-decoration: none;
       }
       
       .button:hover {
         background: var(--term-fg) !important;
         color: var(--term-bg) !important;
-        box-shadow: 0 0 10px var(--term-fg);
       }
 
       .button--ghost {
-        border-color: var(--term-dim) !important;
+        border: 1px solid var(--term-dim) !important;
         color: var(--term-dim) !important;
       }
-      
-      .button--ghost:hover {
-        background: var(--term-dim) !important;
-        box-shadow: 0 0 10px var(--term-dim);
-      }
 
-      /* Header specific fixes */
-      .site-header__links {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
+      /* Theme Switcher specific */
       #theme-toggle {
-        font-size: 0.8rem;
-        padding: 0.25rem 0.5rem;
-        margin-right: 0;
+        margin-left: 1rem;
+        font-size: 11px;
       }
 
-      /* Footer */
-      .site-footer {
-        border-top: 1px dashed var(--term-fg) !important;
-        background: transparent !important;
-        padding-top: 1rem;
-      }
-
-      /* Blinking Cursor Effect */
-      .blink {
-        animation: blinker 1s linear infinite;
-      }
-      @keyframes blinker {
-        50% { opacity: 0; }
-      }
-
-      /* CRT Scanline Overlay */
+      /* Scanline & Blinking Cursor */
       .site-bg {
         position: fixed;
         top: 0; left: 0; width: 100vw; height: 100vh;
-        background: linear-gradient(rgba(18, 16, 16, 0) 50%, var(--term-scanline) 50%);
+        background: linear-gradient(var(--term-scanline) 50%, transparent 50%);
         background-size: 100% 4px;
         z-index: 9999;
         pointer-events: none;
       }
+
+      .blink { animation: blinker 0.8s step-start infinite; }
+      @keyframes blinker { 50% { opacity: 0; } }
     </style>
   </head>
   <body>
@@ -185,13 +135,13 @@
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="{{ '/' | relative_url }}">
-          <span class="brand__mark">root@minirep:~#</span>
-          <span class="brand__docs">./docs</span><span class="blink">_</span>
+          <span class="brand__mark">MNRP://SYSTEM_DOCS</span>
+          <span class="blink">|</span>
         </a>
         <div class="site-header__links">
           <a href="{{ site.releases_url }}">Releases</a>
           <a href="{{ site.github_repo }}">GitHub</a>
-          <button id="theme-toggle" class="button button--ghost">INV_COLORS</button>
+          <button id="theme-toggle" class="button">SWITCH_MODE</button>
         </div>
       </div>
     </header>
@@ -199,41 +149,27 @@
     <div class="site-shell">
       <aside class="site-sidebar">
         <div class="sidebar-card">
-          <div class="sidebar-eyebrow">sys.info</div>
+          <div class="sidebar-eyebrow">NODE_INFO</div>
           <div class="sidebar-title">{{ site.title }}</div>
           <p class="sidebar-copy">{{ site.tagline }}</p>
         </div>
 
-        <nav class="sidebar-nav" aria-label="Primary">
+        <nav class="sidebar-nav">
           {% for item in site.nav %}
-            {% assign current_url = page.url | replace: 'index.html', '' %}
-            {% assign item_url = item.url | relative_url %}
-            {% assign normalized_item_url = item.url %}
-            <a class="sidebar-nav__link{% if current_url == normalized_item_url %} is-active{% endif %}" href="{{ item_url }}">
+            <a class="sidebar-nav__link{% if page.url == item.url %} is-active{% endif %}" href="{{ item.url | relative_url }}">
               {{ item.title }}
             </a>
           {% endfor %}
         </nav>
-
-        <div class="sidebar-card sidebar-card--muted">
-          <div class="sidebar-card__title">> man minirep</div>
-          <p>`minirep` is a browser-native companion to Burp Suite and other security tooling. It stays close to real traffic, frontend context, and DevTools workflows.</p>
-        </div>
       </aside>
 
       <main class="site-main">
         <div class="page-frame">
           <div class="page-hero">
-            {% if page.eyebrow %}
-              <div class="page-eyebrow">// {{ page.eyebrow }}</div>
-            {% endif %}
-            <h1>> {{ page.title }}<span class="blink">_</span></h1>
-            {% if page.description %}
-              <p class="page-description">{{ page.description }}</p>
-            {% endif %}
+            <h1>{{ page.title }}</h1>
             <div class="page-actions">
-              <a class="button button--primary" href="{{ site.releases_url }}">wget Release</a>
-              <a class="button button--ghost" href="{{ site.github_repo }}">git clone Repo</a>
+              <a class="button" href="{{ site.releases_url }}">EXECUTE_DOWNLOAD</a>
+              <a class="button button--ghost" href="{{ site.github_repo }}">SOURCE_CODE</a>
             </div>
           </div>
 
@@ -246,32 +182,34 @@
 
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <span>{{ site.title }} v.1.0 // Chrome DevTools extension for AI-assisted API testing and security analysis.</span>
-        <span><a href="{{ site.github_repo }}">GitHub</a> | <a href="{{ '/security/' | relative_url }}">Security</a> | <a href="{{ '/installation/' | relative_url }}">Install</a></span>
+        <span>&copy; {{ site.title }} // UNLOCKING_POTENTIAL</span>
+        <button id="theme-toggle-footer" style="background:none; border:none; color:var(--term-dim); cursor:pointer; font-family:inherit;">[TOGGLE_UI]</button>
       </div>
     </footer>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggleBtn = document.getElementById("theme-toggle");
-        const htmlElement = document.documentElement;
+      const toggleBtns = [document.getElementById("theme-toggle"), document.getElementById("theme-toggle-footer")];
+      const htmlEl = document.documentElement;
 
-        // Check LocalStorage for saved preference
-        const savedTheme = localStorage.getItem("hacker-theme");
-        if (savedTheme) {
-          htmlElement.setAttribute("data-theme", savedTheme);
+      const setTheme = (theme) => {
+        if (theme === "light") {
+          htmlEl.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+        } else {
+          htmlEl.removeAttribute("data-theme");
+          localStorage.setItem("theme", "dark");
         }
+      };
 
-        // Toggle logic
-        toggleBtn.addEventListener("click", () => {
-          const currentTheme = htmlElement.getAttribute("data-theme");
-          if (currentTheme === "light") {
-            htmlElement.removeAttribute("data-theme");
-            localStorage.setItem("hacker-theme", "dark");
-          } else {
-            htmlElement.setAttribute("data-theme", "light");
-            localStorage.setItem("hacker-theme", "light");
-          }
+      // Init
+      const saved = localStorage.getItem("theme");
+      if (saved) setTheme(saved);
+
+      toggleBtns.forEach(btn => {
+        if(!btn) return;
+        btn.addEventListener("click", () => {
+          const isLight = htmlEl.getAttribute("data-theme") === "light";
+          setTheme(isLight ? "dark" : "light");
         });
       });
     </script>
