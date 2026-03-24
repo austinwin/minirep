@@ -7,7 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/austinwin/minirep?style=social)](https://github.com/austinwin/minirep/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/austinwin/minirep?style=social)](https://github.com/austinwin/minirep/network/members)  
 
-full doc at: https://austinwin.github.io/minirep/ 
+full docs at: https://austinwin.github.io/minirep/ 
 
 
 `minirep` is a Chrome DevTools extension for live request capture, API replay, response inspection, extractor-based recon, and AI-assisted security testing. It combines a DevTools request mirror, a lightweight repeater/runner, a finding extractor, and an AI agent that can work from captured traffic and selected findings.
