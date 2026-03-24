@@ -8,14 +8,159 @@
     <link rel="icon" type="image/png" href="{{ '/assets/favicon-96.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
     {% seo %}
+    
+    <style>
+      :root {
+        --term-bg: #050505;
+        --term-fg: #00ff00;
+        --term-dim: #008800;
+        --term-accent: #00ffff;
+        --term-font: 'Courier New', Courier, monospace;
+      }
+      
+      body, html {
+        background-color: var(--term-bg) !important;
+        color: var(--term-fg) !important;
+        font-family: var(--term-font) !important;
+      }
+      
+      /* Global Typography & CRT Glow */
+      h1, h2, h3, h4, h5, h6, .sidebar-eyebrow, .sidebar-title {
+        color: var(--term-fg) !important;
+        text-shadow: 0 0 4px var(--term-fg);
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      a {
+        color: var(--term-accent) !important;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color: var(--term-bg) !important;
+        background-color: var(--term-accent);
+      }
+
+      /* Layout Borders */
+      .site-header {
+        border-bottom: 1px dashed var(--term-fg) !important;
+        background: transparent !important;
+      }
+      
+      .site-sidebar {
+        border-right: 1px dashed var(--term-dim) !important;
+        background: transparent !important;
+      }
+      
+      .brand {
+        color: var(--term-fg) !important;
+        text-shadow: 0 0 5px var(--term-fg);
+      }
+
+      /* Sidebar Elements */
+      .sidebar-card {
+        border: 1px solid var(--term-dim);
+        background: rgba(0, 255, 0, 0.03) !important;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .sidebar-card--muted {
+        border-color: #222;
+        color: var(--term-dim) !important;
+      }
+
+      /* Navigation */
+      .sidebar-nav {
+        margin-bottom: 2rem;
+      }
+      
+      .sidebar-nav__link {
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #111;
+      }
+      
+      .sidebar-nav__link::before {
+        content: "[ ] ";
+        color: var(--term-dim);
+      }
+      
+      .sidebar-nav__link:hover::before,
+      .sidebar-nav__link.is-active::before {
+        content: "[*] ";
+        color: var(--term-fg);
+        text-shadow: 0 0 5px var(--term-fg);
+      }
+
+      .sidebar-nav__link.is-active {
+        color: var(--term-fg) !important;
+      }
+
+      /* Buttons */
+      .button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+        border: 1px solid var(--term-fg) !important;
+        background: var(--term-bg) !important;
+        color: var(--term-fg) !important;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: all 0.2s;
+      }
+      
+      .button:hover {
+        background: var(--term-fg) !important;
+        color: var(--term-bg) !important;
+        box-shadow: 0 0 10px var(--term-fg);
+      }
+
+      .button--ghost {
+        border-color: var(--term-dim) !important;
+        color: var(--term-dim) !important;
+      }
+      
+      .button--ghost:hover {
+        background: var(--term-dim) !important;
+        box-shadow: 0 0 10px var(--term-dim);
+      }
+
+      /* Footer */
+      .site-footer {
+        border-top: 1px dashed var(--term-fg) !important;
+        background: transparent !important;
+        padding-top: 1rem;
+      }
+
+      /* Blinking Cursor Effect */
+      .blink {
+        animation: blinker 1s linear infinite;
+      }
+      @keyframes blinker {
+        50% { opacity: 0; }
+      }
+
+      /* CRT Scanline Overlay */
+      .site-bg {
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+        background-size: 100% 4px;
+        z-index: 9999;
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
     <div class="site-bg"></div>
+    
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="{{ '/' | relative_url }}">
-          <span class="brand__mark">MINIREP</span>
-          <span class="brand__docs">DOCS</span>
+          <span class="brand__mark">root@minirep:~#</span>
+          <span class="brand__docs">./docs</span><span class="blink">_</span>
         </a>
         <div class="site-header__links">
           <a href="{{ site.releases_url }}">Releases</a>
@@ -27,7 +172,7 @@
     <div class="site-shell">
       <aside class="site-sidebar">
         <div class="sidebar-card">
-          <div class="sidebar-eyebrow">Documentation</div>
+          <div class="sidebar-eyebrow">sys.info</div>
           <div class="sidebar-title">{{ site.title }}</div>
           <p class="sidebar-copy">{{ site.tagline }}</p>
         </div>
@@ -44,7 +189,7 @@
         </nav>
 
         <div class="sidebar-card sidebar-card--muted">
-          <div class="sidebar-card__title">Positioning</div>
+          <div class="sidebar-card__title">> man minirep</div>
           <p>`minirep` is a browser-native companion to Burp Suite and other security tooling. It stays close to real traffic, frontend context, and DevTools workflows.</p>
         </div>
       </aside>
@@ -53,15 +198,15 @@
         <div class="page-frame">
           <div class="page-hero">
             {% if page.eyebrow %}
-              <div class="page-eyebrow">{{ page.eyebrow }}</div>
+              <div class="page-eyebrow">// {{ page.eyebrow }}</div>
             {% endif %}
-            <h1>{{ page.title }}</h1>
+            <h1>> {{ page.title }}<span class="blink">_</span></h1>
             {% if page.description %}
               <p class="page-description">{{ page.description }}</p>
             {% endif %}
             <div class="page-actions">
-              <a class="button button--primary" href="{{ site.releases_url }}">Download Release</a>
-              <a class="button button--ghost" href="{{ site.github_repo }}">View Repository</a>
+              <a class="button button--primary" href="{{ site.releases_url }}">wget Release</a>
+              <a class="button button--ghost" href="{{ site.github_repo }}">git clone Repo</a>
             </div>
           </div>
 
@@ -74,8 +219,8 @@
 
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <span>{{ site.title }}: Chrome DevTools extension for AI-assisted API testing and security analysis.</span>
-        <span><a href="{{ site.github_repo }}">GitHub</a> · <a href="{{ '/security/' | relative_url }}">Security</a> · <a href="{{ '/installation/' | relative_url }}">Install</a></span>
+        <span>{{ site.title }} v.1.0 // Chrome DevTools extension for AI-assisted API testing and security analysis.</span>
+        <span><a href="{{ site.github_repo }}">GitHub</a> | <a href="{{ '/security/' | relative_url }}">Security</a> | <a href="{{ '/installation/' | relative_url }}">Install</a></span>
       </div>
     </footer>
   </body>
