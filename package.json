@@ -3,7 +3,7 @@
   "description": "Chrome DevTools extension for AI-assisted API testing, request replay, extractor-based recon, and web security analysis.",
   "license": "MIT",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/austinwin/minirep",
   "repository": {
     "type": "git",
