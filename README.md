@@ -16,7 +16,7 @@ If you are looking for a Chrome DevTools extension for API testing, request repl
 
 ## Contents
 
-- [Why Minirep](#why-minirep)
+- [Why Minirep?](#why-minirep)
 - [Core Capabilities](#core-capabilities)
 - [Install In Chrome](#install-in-chrome)
 - [Suggested Workflow](#suggested-workflow)
